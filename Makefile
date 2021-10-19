@@ -33,6 +33,13 @@ compile_install_requirements:
 	pip install -r requirements.txt && pip install -r dev-requirements.txt
 
 # Commands for Docker version
+docker_install:
+	cp ./backend/.env.example ./backend/.env
+	cp ./backend/starter_app/settings/local.py.example ./backend/starter_app/settings/local.py
+	make docker_setup
+	make docker_makemigrations
+	make docker_migrate
+
 docker_setup:
 	docker volume create starter_app_dbdata
 	docker-compose build --no-cache backend
