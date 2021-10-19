@@ -27,9 +27,7 @@ npm-debug.log
 /frontend/webpack_bundles/*
 /webpack-stats.json
 
-# Sass
-.sass-cache
-*.map
+
 
 # General
 /starter_app-venv/
